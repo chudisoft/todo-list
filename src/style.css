@@ -77,6 +77,10 @@ main {
   color: #303030;
 }
 
+#clear label {
+  color: #6c6c6c;
+}
+
 #description:active,
 #description:focus,
 .borderless:active,
