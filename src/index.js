@@ -73,15 +73,25 @@ function addTodo(todo) {
   const removeBtn = document.createElement('img');
   removeBtn.src = './assets/images/icons/bin.png';
   removeBtn.className = 'hidden';
-  img.addEventListener('click', (event) => {
-    event.stopImmediatePropagation();
+
+  const startEdit = () => {
     divTodo.classList.toggle('bg-brown');
     elDescription.classList.toggle('hidden');
     elDescriptionEditor.classList.toggle('hidden');
     img.classList.toggle('hidden');
     removeBtn.classList.toggle('hidden');
     elDescriptionEditor.focus();
+  };
+
+  img.addEventListener('click', (event) => {
+    event.stopImmediatePropagation();
+    startEdit();
   });
+  elDescription.addEventListener('click', (event) => {
+    event.stopImmediatePropagation();
+    startEdit();
+  });
+
   removeBtn.addEventListener('click', (event) => {
     event.stopImmediatePropagation();
     removeTodo(todo);
@@ -123,6 +133,29 @@ function renderTodoList() {
   todoList = [];
   if (storedvalue !== null) {
     todoList = JSON.parse(storedvalue);
+  } else {
+    todoList.push(
+      {
+        description: 'Manage all your lists in one place',
+        completed: false,
+        index: 1,
+      },
+      {
+        description: 'Double-tap to edit',
+        completed: false,
+        index: 2,
+      },
+      {
+        description: 'Drag \'n drop to reorder your list',
+        completed: false,
+        index: 3,
+      },
+      {
+        description: 'Resync to clear out the old',
+        completed: false,
+        index: 4,
+      },
+    );
   }
   todoList.forEach((todo) => {
     addTodo(todo);
