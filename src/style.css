@@ -69,6 +69,14 @@ main {
   background-color: unset;
 }
 
+.todo label,
+.borderless,
+#clear label {
+  font-size: 1.2em;
+  padding-left: 1em;
+  color: #303030;
+}
+
 #description:active,
 #description:focus,
 .borderless:active,
@@ -85,14 +93,6 @@ input[type='checkbox'] {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.todo label,
-.borderless,
-#clear label {
-  font-size: 1.2em;
-  padding-left: 1em;
-  color: #303030;
 }
 
 #clear,

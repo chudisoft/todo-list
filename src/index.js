@@ -44,9 +44,6 @@ function removeTodo(todo) {
   const index = todoList.indexOf(todo);
   todoList = todoList.filter((_todo) => _todo.index !== todo.index);
   saveData();
-  console.log(todoListElement);
-  console.log(index);
-  console.log(todoList);
   todoListElement.removeChild(todoListElement.childNodes[index]);
 }
 
