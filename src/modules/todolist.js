@@ -76,6 +76,7 @@ function addTodo(todo, addToList = false) {
   elDescription.textContent = todo.description;
   elDescriptionEditor.value = todo.description;
   elDescriptionEditor.className = 'hidden borderless';
+  elDescription.className = `${todo.completed ? 'cancelled' : ''}`;
   img.src = './assets/images/icons/more.png';
 
   const removeBtn = document.createElement('img');
