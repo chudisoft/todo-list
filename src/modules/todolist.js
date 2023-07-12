@@ -16,7 +16,7 @@ function clearCompleted() {
       todoListElement.childNodes[index].remove();
     }
   }
-  todoList = todoList.filter((_todo) => _todo.completed);
+  todoList = todoList.filter((_todo) => !_todo.completed);
   saveData();
 }
 
