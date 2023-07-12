@@ -13,10 +13,10 @@ function getTodoList() {
 function clearCompleted() {
   for (let index = todoList.length - 1; index >= 0; index -= 1) {
     if (todoList[index].completed) {
-      todoList.pop();
       todoListElement.childNodes[index].remove();
     }
   }
+  todoList = todoList.filter((_todo) => _todo.completed);
   saveData();
 }
 
