@@ -81,7 +81,7 @@ It also allows the student to showcase what they can do to the future employee.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> This Project is deployed at https://chudisoft.github.io/todo-list/dist
+> This Project will be deployed in the future.
 
 <!-- - [Live Demo Link](https://google.com) -->
 
