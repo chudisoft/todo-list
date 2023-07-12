@@ -20,6 +20,12 @@ function clearCompleted() {
   saveData();
 }
 
+function renumberIndex() {
+  for (let index = todoList.length - 1; index >= 0; index -= 1) {
+    todoList[index].index = index + 1;
+  }
+}
+
 function stopEdits() {
   todoListElement.childNodes.forEach((n) => {
     if (n.classList.contains('bg-brown')) {
@@ -43,6 +49,7 @@ function updateTodo(todo) {
 function removeTodo(todo) {
   const index = todoList.indexOf(todo);
   todoList = todoList.filter((_todo) => _todo.index !== todo.index);
+  renumberIndex();
   saveData();
   todoListElement.removeChild(todoListElement.childNodes[index]);
 }
@@ -96,11 +103,13 @@ function addTodo(todo) {
     event.stopImmediatePropagation();
     removeTodo(todo);
   });
+  elDescriptionEditor.addEventListener('click', (event) => {
+    event.stopImmediatePropagation();
+  });
   elDescriptionEditor.addEventListener('keypress', (event) => {
     if (event.key === 'Esc') {
       stopEdits();
     } else if (event.key === 'Enter') {
-      event.preventDefault();
       divTodo.classList.toggle('bg-brown');
       elDescription.textContent = elDescriptionEditor.value;
       todo.description = elDescriptionEditor.value;
@@ -133,29 +142,6 @@ function renderTodoList() {
   todoList = [];
   if (storedvalue !== null) {
     todoList = JSON.parse(storedvalue);
-  } else {
-    todoList.push(
-      {
-        description: 'Manage all your lists in one place',
-        completed: false,
-        index: 1,
-      },
-      {
-        description: 'Double-tap to edit',
-        completed: false,
-        index: 2,
-      },
-      {
-        description: 'Drag \'n drop to reorder your list',
-        completed: false,
-        index: 3,
-      },
-      {
-        description: 'Resync to clear out the old',
-        completed: false,
-        index: 4,
-      },
-    );
   }
   todoList.forEach((todo) => {
     addTodo(todo);
