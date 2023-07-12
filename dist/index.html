@@ -5,68 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
     <link rel="stylesheet" href="./style.css" />
-  <script defer src="index.bundle.js"></script><script defer src="print.bundle.js"></script></head>
+  <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script><script defer src="print.bundle.js"></script></head>
   <body>
     <!-- nav-bar -->
-    <header>
+    <header hidden>
       <nav class="nav">
         <div>
-          <a href="#">Awesome Todo</a>
+          <a href="#">Todo List</a>
         </div>
         <div>
           <a id="listBtn" class="nav-border" href="#List">List</a>
           <a id="AddNewBtn" class="nav-border" href="#Add-new">Add new</a>
-          <a id="contBtn" href="#Contact">Contact</a>
         </div>
       </nav>
     </header>
     <!-- nav-bar end -->
 
     <main>
-      <section class="dt" id="date">
-        <p class="date"></p>
-      </section>
       <section id="todo-section">
-        <h2>All todo list</h2>
+        <h2 class="bg">Today's To Do
+          <button class="btn-no" type="button" id="add-btn">
+            <img src="./assets/images/icons/reload.png" alt="submit">
+          </button>
+        </h2>
+        <form class="bg">
+          <input
+            type="text"
+            id="description"
+            name="description"
+            required
+            placeholder="Add to your list..."
+          />
+          <button class="btn-no" type="submit" id="add-btn">
+            <img src="./assets/images/icons/enter.png" alt="submit">
+          </button>
+        </form>
         <div id="todo-list">
           <div class="todo">
-            <h5 class="title"></h5>
-            <button type="button">Remove</button>
+            <div class="w-auto">
+              <input type="checkbox" />
+              <label>wash the dish</label>
+              <input type="text" />
+            </div>
+            <div class="w-auto">
+              <img src="" alt="" srcset="">
+            </div>
           </div>
         </div>
-      </section>
-      <section id="form-section">
-        <form>
-          <h2 class="main-title">Add a new todo</h2>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            required
-            placeholder="Todo Title"
-          /><br />
-          <input
-            type="text"
-            id="author"
-            name="author"
-            required
-            placeholder="Todo Author"
-          /><br />
-          <button class="btn" type="submit" id="add-btn">Add Todo</button>
-        </form>
-      </section>
-      <section id="contact-section">
-        <div class="contactUs">
-          <h2>Contact information</h2>
-          <p>Do have any questions or you want to say "Hello"?<br> you can reach out to us!</p>
-          <ul>
-            <li>Our e-mail mail@mail.com</li>
-            <li>Our phone number: 0043586534422</li>
-            <li>our address: Streetname 22, 84503 City, country</li>
-          </ul>
+        <div class="text-center bg" id="clear">
+          <label>Clear all completed</label>
         </div>
       </section>
-      <footer><h3>Copyright ...</h3></footer>
+      <footer></footer>
     </main>
 
     <script src="./script.js"></script>
