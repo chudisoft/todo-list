@@ -1,3 +1,6 @@
+import moreImage from '../assets/images/icons/more.png';
+import binImage from '../assets/images/icons/bin.png';
+
 const todoListElement = document.querySelector('#todo-list');
 const todoStorageName = 'todolist';
 let todoList = [];
@@ -77,10 +80,10 @@ function addTodo(todo, addToList = false) {
   elDescriptionEditor.value = todo.description;
   elDescriptionEditor.className = 'hidden borderless';
   elDescription.className = `${todo.completed ? 'cancelled' : ''}`;
-  img.src = './assets/images/icons/more.png';
+  img.src = moreImage;
 
   const removeBtn = document.createElement('img');
-  removeBtn.src = './assets/images/icons/bin.png';
+  removeBtn.src = binImage;
   removeBtn.className = 'hidden';
 
   const startEdit = () => {
