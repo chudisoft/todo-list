@@ -81,7 +81,7 @@ It also allows the student to showcase what they can do to the future employee.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> This Project is deployed at https://chudisoft.github.io/Todo-List/
+> This Project will be deployed in the future.
 
 <!-- - [Live Demo Link](https://google.com) -->
 
@@ -91,9 +91,7 @@ It also allows the student to showcase what they can do to the future employee.
 
 ## 🚀 Project Presentation <a name="project-presentation"></a>
 
-> Feel free to watch the project presentation at [loom](https://www.loom.com/share/a676e26753bc42259b94e2797629015e)
-
-<!-- - [Loom](https://www.loom.com/share/a676e26753bc42259b94e2797629015e) -->
+> This project will be presented in the future.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

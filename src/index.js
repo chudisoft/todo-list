@@ -103,11 +103,13 @@ function addTodo(todo) {
     event.stopImmediatePropagation();
     removeTodo(todo);
   });
+  elDescriptionEditor.addEventListener('click', (event) => {
+    event.stopImmediatePropagation();
+  });
   elDescriptionEditor.addEventListener('keypress', (event) => {
     if (event.key === 'Esc') {
       stopEdits();
     } else if (event.key === 'Enter') {
-      event.preventDefault();
       divTodo.classList.toggle('bg-brown');
       elDescription.textContent = elDescriptionEditor.value;
       todo.description = elDescriptionEditor.value;
