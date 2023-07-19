@@ -34,7 +34,7 @@
 
 # 📖 [Todo List] <a name="about-project"></a>
 
-> This project was created as part of Microverse module 2 week one tasks.
+> This project was created as part of Microverse module 2 week 2 tasks.
 It gives the student an opportunity to play around with HTML, CSS, and Github.
 It also allows the student to showcase what they can do to the future employee.
 
