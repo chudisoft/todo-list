@@ -67,4 +67,16 @@ describe('CRUD operations', () => {
 
     expect(todoNew.getTodoList()[1].completed).toBe(!prevCompletedValue);
   });
+  
+ test('Clear completed todo', () => {
+    // Clear completed todos
+    todoNew.clearCompleted();
+    expect(todoNew.getTodoList().length).toBe(2);
+  });
+
+  test('Delete todo', () => {
+    const lastLength = todoNew.getTodoList().length;
+    todoNew.removeTodo(todoNew.getTodoList()[0]);
+    expect(todoNew.getTodoList().length).toBe(lastLength - 1);
+  });
 });
