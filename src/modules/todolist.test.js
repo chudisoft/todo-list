@@ -21,4 +21,9 @@ describe('CRUD operations', () => {
     todoNew.saveData();
     expect(todoNew.getTodoList().length).toBe(lastLength + 1);
   });
+  test('Delete todo', () => {
+    const lastLength = todoNew.getTodoList().length;
+    todoNew.removeTodo(todoTest);
+    expect(todoNew.getTodoList().length).toBe(lastLength - 1);
+  });
 });
