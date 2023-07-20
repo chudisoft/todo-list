@@ -1,26 +1,40 @@
 {
-  "name": "Todo List",
+  "name": "todo-list",
   "version": "1.0.0",
   "description": "<a name=\"readme-top\"></a>\r <div align=\"center\">\r   <img src=\"assets/images/logo.png\" alt=\"logo\" width=\"140\"  height=\"auto\" />\r   <br/>",
   "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/chudisoft/todo-list#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/mocks/fileMock.js"
+    },
+    "verbose": true,
+    "testEnvironment": "jsdom",
+    "testEnvironmentOptions": {
+      "html": "<html lang='zh-cmn-Hant'></html>",
+      "url": "https://jestjs.io/",
+      "userAgent": "Agent/007"
+    }
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/chudisoft/todo-list"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/chudisoft/todo-list/issues"
   },
-  "homepage": "https://github.com/chudisoft/todo-list#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.8.1",
     "eslint": "^7.32.0",
@@ -35,5 +49,8 @@
     "stylelint-scss": "^3.21.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "jest-environment-jsdom": "^29.6.1"
   }
 }

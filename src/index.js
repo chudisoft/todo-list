@@ -1,7 +1,4 @@
-import {
-  addTodo, clearCompleted, renderTodoList, saveData, stopEdits,
-  getTodoList,
-} from './modules/todolist.js';
+import TodoList from './modules/todolist.js';
 import './style.css';
 import enterImage from './assets/images/icons/enter.png';
 import reloadImage from './assets/images/icons/reload.png';
@@ -11,14 +8,16 @@ const clearCompletedbtn = document.querySelector('#clear');
 document.querySelector('#reloadBtn').src = reloadImage;
 document.querySelector('#enterBtn').src = enterImage;
 
-renderTodoList();
+const todoNew = new TodoList();
+
+todoNew.renderTodoList();
 const body = document.getElementsByTagName('body')[0];
 body.addEventListener('click', () => {
-  stopEdits();
+  todoNew.stopEdits();
 });
 
 clearCompletedbtn.addEventListener('click', () => {
-  clearCompleted();
+  todoNew.clearCompleted();
 });
 
 //  add an event listener to the form submit button
@@ -29,10 +28,10 @@ form.addEventListener('submit', (event) => {
     const todo = {
       description: desc,
       completed: false,
-      index: getTodoList().length + 1,
+      index: todoNew.getTodoList().length + 1,
     };
-    addTodo(todo, true);
-    saveData();
+    todoNew.addTodo(todo, true);
+    todoNew.saveData();
     document.querySelector('#description').value = '';
   }
 });
