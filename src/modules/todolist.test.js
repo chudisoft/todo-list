@@ -67,8 +67,8 @@ describe('CRUD operations', () => {
 
     expect(todoNew.getTodoList()[1].completed).toBe(!prevCompletedValue);
   });
-  
- test('Clear completed todo', () => {
+
+  test('Clear completed todo', () => {
     // Clear completed todos
     todoNew.clearCompleted();
     expect(todoNew.getTodoList().length).toBe(2);
