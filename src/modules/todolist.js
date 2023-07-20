@@ -37,6 +37,7 @@ class TodoList {
       }
     }
     this.todoList = this.todoList.filter((_todo) => !_todo.completed);
+    this.renumberIndex();
     this.saveData();
   }
 
@@ -47,19 +48,18 @@ class TodoList {
   }
 
   updateTodo(todo) {
-    const index = this.todoList.indexOf(todo);
-    const item = this.todoList[index];
-    item.description = todo.description;
-    item.completed = todo.completed;
+    const oldTodo = this.todoList.find((x) => x.index === todo.index);
+    oldTodo.description = todo.description;
+    oldTodo.completed = todo.completed;
     this.saveData();
   }
 
   removeTodo(todo) {
-    const index = this.todoList.indexOf(todo);
-    this.todoList = this.todoList.filter((_todo) => _todo.index !== todo.index);
+    const oldTodo = this.todoList.find((x) => x.index === todo.index);
+    this.todoList = this.todoList.filter((x) => x.index !== oldTodo.index);
     this.renumberIndex();
     this.saveData();
-    this.todoListElement.removeChild(this.todoListElement.childNodes[index]);
+    this.todoListElement.removeChild(this.todoListElement.childNodes[oldTodo.index - 1]);
   }
 
   addTodo(todo, addToList = false) {
