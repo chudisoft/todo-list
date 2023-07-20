@@ -2,7 +2,6 @@
  * @jest-environment jsdom
  */
 import TodoList from './todolist.js';
-// const TodoList = require('./todolist.js');
 
 const div = document.createElement('div');
 div.id = 'todo-list';
